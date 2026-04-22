@@ -1,0 +1,16 @@
+id: push
+namespace: system
+tasks:
+  - id: sync
+    type: io.kestra.plugin.git.Push
+    namespaceFiles:
+      enabled: true
+    flows:
+      enabled: true
+    url: https://github.com/pradumna-saraf/test-plugin
+    username: pradumna-saraf
+    password: "{{secret('GH')}}"
+    branch: test-push
+    directory: test
+    kestraUrl: "http://localhost:8080"
+    commitMessage: "dummy"
